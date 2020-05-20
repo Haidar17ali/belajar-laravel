@@ -38,7 +38,25 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // insert cara ke-1
+        // $student = new Student();
+        // $student->nama = $request->nama;
+        // $student->nim = $request->nim;
+        // $student->email = $request->email;
+        // $student->jurusan = $request->jurusan;
+        // $student->save();
+
+        // Student::create([
+        //     'nama' => $request->nama,
+        //     'nim' => $request->nim,
+        //     'email' => $request->email,
+        //     'jurusan' => $request->jurusan
+        // ]);
+        // atau kita bisa menuliskan seperti dibawah jika sudah ada fillable atau guaerded
+
+        Student::create($request->all());
+
+        return redirect('/mahasiswa')->with('status', 'Data mahasiswa telah ditambahkan');
     }
 
     /**
@@ -47,9 +65,9 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Student $student)
     {
-        //
+        return view('mahasiswa.detail', compact('student'));
     }
 
     /**

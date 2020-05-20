@@ -27,3 +27,5 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
 Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('/mahasiswa/{student}', 'MahasiswaController@show');
+Route::post('/mahasiswa', 'MahasiswaController@store');
