@@ -26,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
-Route::get('/mahasiswa', 'MahasiswaController@index');
-Route::get('/mahasiswa/{student}', 'MahasiswaController@show');
-Route::post('/mahasiswa', 'MahasiswaController@store');
+// Route::get('/mahasiswa', 'MahasiswaController@index');
+// Route::get('/mahasiswa/{student}', 'MahasiswaController@show');
+// Route::post('/mahasiswa', 'MahasiswaController@store');
+// Route::delete('/mahasiswa/{student}', 'MahasiswaController@destroy');
+// Route::get('/mahasiswa/{student}/edit', 'MahasiswaController@edit');
+// Route::patch("/mahasiswa/{student}", "MahasiswaController@update");
+Route::resource('mahasiswa', 'MahasiswaController');
